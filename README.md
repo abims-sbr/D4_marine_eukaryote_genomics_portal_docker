@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/abims-sbr/D4_marine_eukaryote_genomics_portal_docker.svg?branch=master)](https://travis-ci.org/abims-sbr/D4_marine_eukaryote_genomics_portal_docker)
+
 # Marine Eukaryote Genomics Portal Docker
 
 EOSC-Life Demonstrator 4
