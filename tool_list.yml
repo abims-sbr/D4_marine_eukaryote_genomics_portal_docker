@@ -1,0 +1,13 @@
+api_key: fakekey
+galaxy_instance: http://127.0.0.1:8080/
+tools:
+  - name: repeat_masker
+    owner: bgruening
+    revisions:
+      - 438f65cb1d14
+    tool_panel_section_label: Annotation
+  - name: last
+    owner: iuc
+    revisions:
+      - bf30030e5265
+    tool_panel_section_label: Last
