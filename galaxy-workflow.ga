@@ -1,0 +1,198 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Last",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "last_db",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool LASTdb",
+                    "name": "input_files"
+                }
+            ],
+            "label": null,
+            "name": "LASTdb",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "lastdb"
+                }
+            ],
+            "position": {
+                "left": 227,
+                "top": 183.5
+            },
+            "post_job_actions": {},
+            "tool_id": "last_db",
+            "tool_state": "{\"input_files\": {\"__class__\": \"RuntimeValue\"}, \"lastdb\": {\"sequences_type\": {\"protein\": \"\", \"__current_case__\": 0, \"a\": \"ACGT\"}, \"repeats\": {\"uppercase\": \"1\", \"simple_repeat\": \"1\", \"sm_lower\": \"true\"}, \"lastdb_advanced\": {\"S\": \"1\", \"seeds\": {\"u\": \"NEAR\", \"__current_case__\": 5, \"w\": \"1\", \"W\": \"1\", \"m\": \"1\"}, \"i\": \"0\", \"C\": \"0\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1021+galaxy1",
+            "type": "tool",
+            "uuid": "4fef6daf-3a5c-44a7-9262-09591628c8c8",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "last_maf_convert",
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MAF-convert",
+                    "name": "maf_file"
+                }
+            ],
+            "label": null,
+            "name": "MAF-convert",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "maf"
+                }
+            ],
+            "position": {
+                "left": 1196,
+                "top": 227.5
+            },
+            "post_job_actions": {},
+            "tool_id": "last_maf_convert",
+            "tool_state": "{\"maf_convert\": {\"noheader\": \"false\", \"output_type\": {\"output_format\": \"psl\", \"__current_case__\": 2, \"protein\": \"false\", \"j\": \"1\"}}, \"maf_file\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1021+galaxy0",
+            "type": "tool",
+            "uuid": "3d613b41-11c6-4165-89e9-d3d865929b0a",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "last_train",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "db_opts|lastdatabase": {
+                    "id": 0,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool LAST-train",
+                    "name": "db_opts"
+                },
+                {
+                    "description": "runtime parameter for tool LAST-train",
+                    "name": "query_fasta"
+                }
+            ],
+            "label": null,
+            "name": "LAST-train",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 434,
+                "top": 361.5
+            },
+            "post_job_actions": {},
+            "tool_id": "last_train",
+            "tool_state": "{\"db_opts\": {\"db_opts_input\": \"lastdb\", \"__current_case__\": 1, \"lastdatabase\": {\"__class__\": \"RuntimeValue\"}}, \"init_options\": {\"Q\": \"0\", \"__current_case__\": 0, \"r\": \"5\", \"q\": \"5\", \"cost_opt\": {\"a\": \"15\", \"b\": \"3\", \"A\": \"15\", \"B\": \"3\"}}, \"last_train_opt\": {\"align_opt\": {\"D\": \"1000000\", \"E\": \"10\", \"s\": \"1\", \"S\": \"1\", \"T\": \"0\", \"m\": \"10\", \"k\": \"1\", \"X\": \"0\"}}, \"query_fasta\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1021+galaxy1",
+            "type": "tool",
+            "uuid": "6889f6cb-3bd2-496c-8fee-88fb05a18892",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "last_al",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "db_opts|lastdatabase": {
+                    "id": 0,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool LASTal",
+                    "name": "db_opts"
+                },
+                {
+                    "description": "runtime parameter for tool LASTal",
+                    "name": "query_seq"
+                }
+            ],
+            "label": null,
+            "name": "LASTal",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "maf"
+                }
+            ],
+            "position": {
+                "left": 722,
+                "top": 205.5
+            },
+            "post_job_actions": {},
+            "tool_id": "last_al",
+            "tool_state": "{\"db_opts\": {\"db_opts_input\": \"lastdb\", \"__current_case__\": 1, \"lastdatabase\": {\"__class__\": \"RuntimeValue\"}}, \"lastal\": {\"f\": \"MAF\", \"j\": \"3\", \"isprotein\": {\"lastal_protein\": \"dna\", \"__current_case__\": 0, \"schoring_schemes\": {\"score_matrix\": \"scoreFile\", \"__current_case__\": 10, \"scoreMatrixFile\": {\"__class__\": \"RuntimeValue\"}}, \"s\": \"2\"}, \"repeats_misc\": {\"uppercase_misc\": \"1\", \"simple_repeat_misc\": \"0\"}, \"evalue_opt\": {\"D\": \"1000000\"}, \"init_match_opt\": {\"m\": \"10\", \"l\": \"1\", \"L\": \"999999999\", \"k\": \"1\", \"W\": \"1\"}, \"misc_opt\": {\"S\": \"0\", \"K\": \"0\", \"C\": \"0\", \"T\": \"0\", \"n\": \"10\", \"u\": \"0\", \"w\": \"1000\", \"G\": \"1\", \"g\": \"1\"}}, \"query_seq\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1021+galaxy1",
+            "type": "tool",
+            "uuid": "e13efc25-165f-4b73-8931-ad5fac874273",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "last_split",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "db_opts|lastdatabase": {
+                    "id": 2,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool LAST-split",
+                    "name": "db_opts"
+                },
+                {
+                    "description": "runtime parameter for tool LAST-split",
+                    "name": "last_align"
+                }
+            ],
+            "label": null,
+            "name": "LAST-split",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "maf"
+                }
+            ],
+            "position": {
+                "left": 967,
+                "top": 408.5
+            },
+            "post_job_actions": {},
+            "tool_id": "last_split",
+            "tool_state": "{\"db_opts\": {\"db_opts_input\": \"lastdb\", \"__current_case__\": 1, \"lastdatabase\": {\"__class__\": \"RuntimeValue\"}}, \"last_align\": {\"__class__\": \"RuntimeValue\"}, \"lastsplit_opt\": {\"d\": \"1\", \"c\": \"0.004\", \"t\": \"1e-05\", \"M\": \"7.0\", \"S\": \"1.7\", \"m\": \"1.0\", \"no_split\": \"false\"}, \"output_format\": \"MAF+\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1021+galaxy0",
+            "type": "tool",
+            "uuid": "a1b4f3c2-1d2f-42d7-9c59-221b9989926e",
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "0453396e-524c-4709-8d89-db2c67022f51",
+    "version": 1
+}
