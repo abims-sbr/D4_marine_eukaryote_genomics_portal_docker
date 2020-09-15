@@ -3,13 +3,13 @@
 sudo: required
 
 language: python
-python: 3.7
+python: 3.5
 
 services:
   - docker
 
 env:
-  - TOX_ENV=py37
+  - TOX_ENV=py35
 
 before_install:
   - wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
