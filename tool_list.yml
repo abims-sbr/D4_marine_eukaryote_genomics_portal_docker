@@ -11,3 +11,8 @@ tools:
     revisions:
       - bf30030e5265
     tool_panel_section_label: Last
+  - name: gffalign
+    owner: abims-sbr
+    revisions:
+      - 294f5ba28746
+    tool_panel_section_label: GFFalign
