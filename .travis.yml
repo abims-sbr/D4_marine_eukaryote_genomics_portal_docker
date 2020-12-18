@@ -9,7 +9,7 @@ services:
   - docker
 
 env:
-  - TOX_ENV=py35
+  - TOX_ENV=py36
 
 before_install:
   - wget https://raw.githubusercontent.com/bgruening/galaxy-flavor-testing/master/Makefile
