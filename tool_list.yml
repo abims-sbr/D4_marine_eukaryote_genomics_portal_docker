@@ -14,5 +14,5 @@ tools:
   - name: gffalign
     owner: abims-sbr
     revisions:
-      - 294f5ba28746
+     - afed7e0cf69e
     tool_panel_section_label: GFFalign
